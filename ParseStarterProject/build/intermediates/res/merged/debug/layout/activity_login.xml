@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:text="Logar"
         android:layout_marginTop="16dp"
-        android:background="@drawable/fundo_botao"/>
+        android:background="@drawable/fundo_botao" />
 
     <TextView
         android:layout_width="match_parent"
@@ -48,7 +48,8 @@
         android:text="Não tem uma conta? Crie uma"
         android:textSize="17sp"
         android:gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:id="@+id/login_cadastrar"/>
 
 </LinearLayout>
 <!-- From: file:/C:/Users/Rafael/Desktop/Parse-Projeto-1.13.0/ParseStarterProject/src/main/res/layout/activity_login.xml -->

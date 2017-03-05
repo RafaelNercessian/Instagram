@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_login"
+    android:id="@+id/activity_cadastro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.parse.starter.activity.LoginActivity"
-    android:orientation="vertical"
     android:padding="16dp"
+    tools:context="com.parse.starter.activity.CadastroActivity"
     android:background="@drawable/fundo_degrade"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:background="@drawable/logo" />
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:background="@drawable/usuario"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Usuário"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/fundo_caixa_texto"
+        android:paddingLeft="16dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="E-mail"
-        android:layout_marginTop="16dp"
         android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
         android:background="@drawable/fundo_caixa_texto"
         android:paddingLeft="16dp"
         android:inputType="textEmailAddress"/>
@@ -34,21 +43,21 @@
         android:background="@drawable/fundo_caixa_texto"
         android:paddingLeft="16dp"
         android:inputType="textPassword"/>
-    
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logar"
+        android:text="Cadastrar"
         android:layout_marginTop="16dp"
         android:background="@drawable/fundo_botao" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Não tem uma conta? Crie uma"
+        android:text="Já tem conta? Faça login"
         android:textSize="17sp"
         android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:id="@+id/login_cadastrar"/>
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
+<!-- From: file:/C:/Users/Rafael/Desktop/Parse-Projeto-1.13.0/ParseStarterProject/src/main/res/layout/activity_cadastro.xml -->
