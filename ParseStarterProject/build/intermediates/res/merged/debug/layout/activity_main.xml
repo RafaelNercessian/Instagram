@@ -10,5 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.parse.starter.activity.MainActivity">
 
+
+
 </RelativeLayout>
 <!-- From: file:/C:/Users/Rafael/Desktop/Parse-Projeto-1.13.0/ParseStarterProject/src/main/res/layout/activity_main.xml -->

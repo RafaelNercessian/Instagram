@@ -18,12 +18,12 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="E-mail"
+        android:hint="Usuário"
         android:layout_marginTop="16dp"
         android:textColor="@android:color/white"
         android:background="@drawable/fundo_caixa_texto"
         android:paddingLeft="16dp"
-        android:inputType="textEmailAddress"/>
+        android:id="@+id/login_usuario"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -33,14 +33,16 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/fundo_caixa_texto"
         android:paddingLeft="16dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:id="@+id/login_senha"/>
     
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Logar"
         android:layout_marginTop="16dp"
-        android:background="@drawable/fundo_botao" />
+        android:background="@drawable/fundo_botao"
+        android:id="@+id/login_botao"/>
 
     <TextView
         android:layout_width="match_parent"
