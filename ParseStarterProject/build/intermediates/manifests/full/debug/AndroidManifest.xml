@@ -40,6 +40,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.parse.starter.activity.CadastroActivity" />
+        <activity android:name="com.parse.starter.activity.MainActivity" />
     </application>
 
 </manifest>
