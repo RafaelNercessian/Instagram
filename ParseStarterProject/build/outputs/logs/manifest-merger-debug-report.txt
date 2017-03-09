@@ -24,7 +24,8 @@ ADDED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\
 application
 ADDED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\main\AndroidManifest.xml:15:5-37:19
 MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.0.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\main\AndroidManifest.xml:19:9-41
 	android:allowBackup
@@ -72,7 +73,8 @@ ADDED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\
 uses-sdk
 INJECTED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:22.2.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.0.0] C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\src\main\AndroidManifest.xml

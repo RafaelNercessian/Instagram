@@ -6,10 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.parse.starter.activity.MainActivity">
 
-<include layout="@layout/toolbar"
-    android:id="@+id/toolbar_principal">
+    <include
+        android:id="@+id/toolbar_principal"
+        layout="@layout/toolbar"></include>
+    
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </android.support.v4.view.ViewPager>
 
-</include>
-
+    <com.parse.starter.util.SlidingTabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"></com.parse.starter.util.SlidingTabLayout>
+    
 </RelativeLayout>
 <!-- From: file:/C:/Users/Rafael/Desktop/Parse-Projeto-1.13.0/ParseStarterProject/src/main/res/layout/activity_main.xml -->
