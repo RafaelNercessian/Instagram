@@ -2,4 +2,5 @@
 <resources>
     
     <color name="colorPrimary">#ffffff</color>
+    <color name="cinzaEscuro">#5c5c5c</color>
 </resources>

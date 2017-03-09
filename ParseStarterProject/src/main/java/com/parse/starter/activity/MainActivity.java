@@ -1,6 +1,7 @@
 package com.parse.starter.activity;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager=(ViewPager) findViewById(R.id.view_pager_main);
 
         TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), this);
+        viewPager.setAdapter(tabsAdapter);
+        slidingTabLayout.setViewPager(viewPager);
+        slidingTabLayout.setCustomTabView(R.layout.tabs_view,R.id.text_item_tab);
+        slidingTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this,R.color.cinzaEscuro));
+        slidingTabLayout.setDistributeEvenly(true);
 
         toolbarPrincipal.setLogo(R.drawable.instagramlogo);
         setSupportActionBar(toolbarPrincipal);
