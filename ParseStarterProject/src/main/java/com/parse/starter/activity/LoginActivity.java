@@ -3,6 +3,7 @@ package com.parse.starter.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,7 +62,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser user, ParseException e) {
                     if(e==null){
-                        Toast.makeText(LoginActivity.this, "Usuário logado", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }else{
                         e.printStackTrace();
                         Toast.makeText(LoginActivity.this, "Erro", Toast.LENGTH_SHORT).show();
