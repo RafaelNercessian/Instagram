@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
 
         TabsAdapter tabsAdapter = new TabsAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(tabsAdapter);
-        slidingTabLayout.setViewPager(viewPager);
         slidingTabLayout.setCustomTabView(R.layout.tabs_view,R.id.text_item_tab);
         slidingTabLayout.setSelectedIndicatorColors(ContextCompat.getColor(this,R.color.cinzaEscuro));
         slidingTabLayout.setDistributeEvenly(true);
+        slidingTabLayout.setViewPager(viewPager);
 
         toolbarPrincipal.setLogo(R.drawable.instagramlogo);
         setSupportActionBar(toolbarPrincipal);

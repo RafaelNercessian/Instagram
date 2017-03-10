@@ -2,25 +2,11 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jar="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-3ac8679cb4a40cad521b07a7c914a1b3386bd4d4.jar" />
-    </item>
-    <item
-        jar="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-8feabafa40d8aa02790e7dd65ac88030acc4f0bb.jar" />
-    </item>
-    <item
-        jar="C:\Users\Rafael\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-52a74b382cafe1dfa6c7886e499d6a619603d48a.jar" />
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\Rafael\Desktop\Parse-Projeto-1.13.0\ParseStarterProject\build\intermediates\pre-dexed\debug\classes-8c5252a0dcb7608636144d83d664674b3e5e33b6.jar" />
     </item>
 
 </items>

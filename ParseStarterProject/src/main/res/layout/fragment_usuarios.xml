@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:text="USUÁRIOS"
             android:textSize="20sp"
-            android:textColor=""
+            android:textColor="@android:color/black"
             android:layout_gravity="center"
             android:gravity="center"/>
 

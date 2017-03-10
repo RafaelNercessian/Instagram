@@ -4,11 +4,19 @@
     android:layout_height="match_parent"
     tools:context="com.parse.starter.fragment.UsuariosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USUÁRIOS"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
 
 </FrameLayout>
 <!-- From: file:/C:/Users/Rafael/Desktop/Parse-Projeto-1.13.0/ParseStarterProject/src/main/res/layout/fragment_usuarios.xml -->
