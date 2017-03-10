@@ -1,6 +1,12 @@
 package com.parse.starter.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +14,27 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.starter.R;
 import com.parse.starter.adapter.TabsAdapter;
 import com.parse.starter.util.SlidingTabLayout;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbarPrincipal;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
+    private static final int REQUEST_CODE=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +71,49 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.menu_camera:
+                compartilharFoto();
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void compartilharFoto() {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},REQUEST_CODE);
+        }
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent,REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE && resultCode==RESULT_OK && data !=null){
+            Uri localImagemSelecionada=data.getData();
+            try {
+                Bitmap imagem=MediaStore.Images.Media.getBitmap(getContentResolver(),localImagemSelecionada);
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                imagem.compress(Bitmap.CompressFormat.PNG,75,stream);
+                byte[] byteArray=stream.toByteArray();
+                long tempo = System.currentTimeMillis();
+                ParseFile arquivoParse=new ParseFile("imagem"+tempo+".png",byteArray);
+                ParseObject parseObject=new ParseObject("Imagem");
+                parseObject.put("username",ParseUser.getCurrentUser().getUsername());
+                parseObject.put("imagem",arquivoParse);
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if(e==null){
+                            Toast.makeText(MainActivity.this, "Sua imagem foi postada com sucesso", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(MainActivity.this, "Erro ao enviar imagem", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
