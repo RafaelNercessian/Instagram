@@ -47,7 +47,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    public void atualizaPostagens(){
+    public void atualizaPostagens() {
         getPostagens();
     }
 
@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
                 }
                 HomeAdapater adapter = new HomeAdapater(getActivity(), postagens);
                 listView.setAdapter(adapter);
-                 }
+            }
         });
     }
 
