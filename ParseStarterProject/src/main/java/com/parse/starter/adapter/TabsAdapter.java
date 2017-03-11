@@ -10,10 +10,13 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.view.ViewGroup;
 
 import com.parse.starter.R;
 import com.parse.starter.fragment.HomeFragment;
 import com.parse.starter.fragment.UsuariosFragment;
+
+import java.util.HashMap;
 
 /**
  * Created by Rafael on 08/03/2017.
@@ -26,6 +29,7 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
     private Fragment fragment;
     private int[] icones=new int[]{R.drawable.ic_home,R.drawable.ic_people};
     private int tamanhoIcone;
+    private HashMap<Integer,Fragment> fragmentosUtilizados=new HashMap<>();
 
     public TabsAdapter(FragmentManager fm, Context context) {
         super(fm);
@@ -39,14 +43,26 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
         switch (position){
             case 0:
                 fragment=new HomeFragment();
+                fragmentosUtilizados.put(position,fragment);
                 break;
             case 1:
                 fragment=new UsuariosFragment();
+                fragmentosUtilizados.put(position,fragment);
                 break;
         }
 
         return fragment;
 
+    }
+
+    public Fragment getFragment(Integer indice){
+        return fragmentosUtilizados.get(indice);
+    }
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        super.destroyItem(container, position, object);
+        fragmentosUtilizados.remove(position);
     }
 
     @Override

@@ -23,6 +23,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.starter.R;
 import com.parse.starter.adapter.TabsAdapter;
+import com.parse.starter.fragment.HomeFragment;
 import com.parse.starter.util.SlidingTabLayout;
 
 import java.io.ByteArrayOutputStream;
@@ -106,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
                     public void done(ParseException e) {
                         if(e==null){
                             Toast.makeText(MainActivity.this, "Sua imagem foi postada com sucesso", Toast.LENGTH_SHORT).show();
+                            TabsAdapter adapterNovo=(TabsAdapter) viewPager.getAdapter();
+                            HomeFragment homeFragmentNovo = new HomeFragment();
+                            homeFragmentNovo= (HomeFragment) adapterNovo.getFragment(0);
+                            homeFragmentNovo.atualizaPostagens();
                         }else{
                             Toast.makeText(MainActivity.this, "Erro ao enviar imagem", Toast.LENGTH_SHORT).show();
                         }

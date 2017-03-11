@@ -43,6 +43,15 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         listView = (ListView) view.findViewById(R.id.list_postagens_home);
         postagens = new ArrayList<>();
+        getPostagens();
+        return view;
+    }
+
+    public void atualizaPostagens(){
+        getPostagens();
+    }
+
+    private void getPostagens() {
         query = ParseQuery.getQuery("Imagem");
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
         query.orderByAscending("createdAt");
@@ -63,6 +72,7 @@ public class HomeFragment extends Fragment {
                 listView.setAdapter(adapter);
                  }
         });
-        return view;
     }
+
+
 }
