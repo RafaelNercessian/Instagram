@@ -1,12 +1,14 @@
 package com.parse.starter.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,6 +18,7 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.starter.R;
+import com.parse.starter.activity.FeedUsuariosActivity;
 import com.parse.starter.adapter.UsuariosAdapter;
 
 import java.util.ArrayList;
@@ -43,6 +46,20 @@ public class UsuariosFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_usuarios, container, false);
         listView = (ListView) view.findViewById(R.id.list_usuarios);
+        getUsuarios();
+       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+               ParseUser parseUser=usuarios.get(position);
+               Intent intent = new Intent(getActivity(), FeedUsuariosActivity.class);
+               intent.putExtra("username",parseUser.getUsername());
+               startActivity(intent);
+           }
+       });
+        return view;
+    }
+
+    private void getUsuarios() {
         query = ParseUser.getQuery();
         query.whereNotEqualTo("username", ParseUser.getCurrentUser().getUsername());
         query.orderByAscending("username");
@@ -63,7 +80,6 @@ public class UsuariosFragment extends Fragment {
                 listView.setAdapter(usuariosAdapter);
             }
         });
-        return view;
     }
 
 }

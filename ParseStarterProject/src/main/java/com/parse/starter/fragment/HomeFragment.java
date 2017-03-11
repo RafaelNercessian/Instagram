@@ -15,7 +15,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.starter.R;
-import com.parse.starter.adapter.HomeAdapater;
+import com.parse.starter.adapter.PostagensAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
                 } else {
                     e.printStackTrace();
                 }
-                HomeAdapater adapter = new HomeAdapater(getActivity(), postagens);
+                PostagensAdapter adapter = new PostagensAdapter(getActivity(), postagens);
                 listView.setAdapter(adapter);
             }
         });
