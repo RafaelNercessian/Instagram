@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.starter.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class HomeAdapater extends ArrayAdapter<ParseObject> {
         if(postagens.size()>0){
             ImageView imagemPostagem = (ImageView) view.findViewById(R.id.image_lista_postagem);
             ParseObject parseObject=postagens.get(position);
-            parseObject.getParseFile("imagem");
+            Picasso.with(context).load(parseObject.getParseFile("imagem").getUrl()).into(imagemPostagem);
         }
 
         return view;

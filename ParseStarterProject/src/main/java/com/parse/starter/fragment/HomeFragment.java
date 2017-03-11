@@ -41,36 +41,28 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        listView=(ListView) view.findViewById(R.id.list_postagens_home);
-        postagens=new ArrayList<>();
-        HomeAdapater adapter = new HomeAdapater(getActivity(),postagens );
-        listView.setAdapter(adapter);
-
-        getPostagens();
-
-        return view;
-
-    }
-
-    public void getPostagens() {
+        listView = (ListView) view.findViewById(R.id.list_postagens_home);
+        postagens = new ArrayList<>();
         query = ParseQuery.getQuery("Imagem");
         query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
         query.orderByAscending("createdAt");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
-                if(e==null){
-                    if(objects.size()>0){
+                if (e == null) {
+                    if (objects.size() > 0) {
                         postagens.clear();
-                        for (ParseObject parseObject:objects ) {
+                        for (ParseObject parseObject : objects) {
                             postagens.add(parseObject);
                         }
-                        adapter.notifyDataSetChanged();
                     }
-                }else{
+                } else {
                     e.printStackTrace();
                 }
-            }
+                HomeAdapater adapter = new HomeAdapater(getActivity(), postagens);
+                listView.setAdapter(adapter);
+                 }
         });
+        return view;
     }
 }
